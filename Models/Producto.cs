@@ -4,7 +4,7 @@ public class Producto
 {
     public int Id { get; set; }
     public int TenantId { get; set; } // Identifica a qué empresa pertenece
-    public Tenant Tenant { get; set; } = null!;
+    public Tenant? Tenant { get; set; }
 
     public string Nombre { get; set; } = string.Empty;
     public string Categoria { get; set; } = string.Empty;
