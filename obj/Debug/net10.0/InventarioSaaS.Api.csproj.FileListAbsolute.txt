@@ -7,7 +7,9 @@ C:\Users\ivanr\OneDrive\Desktop\TriejaBackend\InventarioSaaS.Api\bin\Debug\net10
 C:\Users\ivanr\OneDrive\Desktop\TriejaBackend\InventarioSaaS.Api\bin\Debug\net10.0\InventarioSaaS.Api.dll
 C:\Users\ivanr\OneDrive\Desktop\TriejaBackend\InventarioSaaS.Api\bin\Debug\net10.0\InventarioSaaS.Api.pdb
 C:\Users\ivanr\OneDrive\Desktop\TriejaBackend\InventarioSaaS.Api\bin\Debug\net10.0\Humanizer.dll
+C:\Users\ivanr\OneDrive\Desktop\TriejaBackend\InventarioSaaS.Api\bin\Debug\net10.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\ivanr\OneDrive\Desktop\TriejaBackend\InventarioSaaS.Api\bin\Debug\net10.0\Microsoft.AspNetCore.OpenApi.dll
+C:\Users\ivanr\OneDrive\Desktop\TriejaBackend\InventarioSaaS.Api\bin\Debug\net10.0\Microsoft.Bcl.Cryptography.dll
 C:\Users\ivanr\OneDrive\Desktop\TriejaBackend\InventarioSaaS.Api\bin\Debug\net10.0\Microsoft.Build.Framework.dll
 C:\Users\ivanr\OneDrive\Desktop\TriejaBackend\InventarioSaaS.Api\bin\Debug\net10.0\Microsoft.CodeAnalysis.dll
 C:\Users\ivanr\OneDrive\Desktop\TriejaBackend\InventarioSaaS.Api\bin\Debug\net10.0\Microsoft.CodeAnalysis.CSharp.dll
@@ -20,6 +22,12 @@ C:\Users\ivanr\OneDrive\Desktop\TriejaBackend\InventarioSaaS.Api\bin\Debug\net10
 C:\Users\ivanr\OneDrive\Desktop\TriejaBackend\InventarioSaaS.Api\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.Design.dll
 C:\Users\ivanr\OneDrive\Desktop\TriejaBackend\InventarioSaaS.Api\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.Relational.dll
 C:\Users\ivanr\OneDrive\Desktop\TriejaBackend\InventarioSaaS.Api\bin\Debug\net10.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\ivanr\OneDrive\Desktop\TriejaBackend\InventarioSaaS.Api\bin\Debug\net10.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\ivanr\OneDrive\Desktop\TriejaBackend\InventarioSaaS.Api\bin\Debug\net10.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\ivanr\OneDrive\Desktop\TriejaBackend\InventarioSaaS.Api\bin\Debug\net10.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\ivanr\OneDrive\Desktop\TriejaBackend\InventarioSaaS.Api\bin\Debug\net10.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\ivanr\OneDrive\Desktop\TriejaBackend\InventarioSaaS.Api\bin\Debug\net10.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\ivanr\OneDrive\Desktop\TriejaBackend\InventarioSaaS.Api\bin\Debug\net10.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\ivanr\OneDrive\Desktop\TriejaBackend\InventarioSaaS.Api\bin\Debug\net10.0\Microsoft.OpenApi.dll
 C:\Users\ivanr\OneDrive\Desktop\TriejaBackend\InventarioSaaS.Api\bin\Debug\net10.0\Microsoft.VisualStudio.SolutionPersistence.dll
 C:\Users\ivanr\OneDrive\Desktop\TriejaBackend\InventarioSaaS.Api\bin\Debug\net10.0\Mono.TextTemplating.dll
@@ -32,6 +40,7 @@ C:\Users\ivanr\OneDrive\Desktop\TriejaBackend\InventarioSaaS.Api\bin\Debug\net10
 C:\Users\ivanr\OneDrive\Desktop\TriejaBackend\InventarioSaaS.Api\bin\Debug\net10.0\System.Composition.Hosting.dll
 C:\Users\ivanr\OneDrive\Desktop\TriejaBackend\InventarioSaaS.Api\bin\Debug\net10.0\System.Composition.Runtime.dll
 C:\Users\ivanr\OneDrive\Desktop\TriejaBackend\InventarioSaaS.Api\bin\Debug\net10.0\System.Composition.TypedParts.dll
+C:\Users\ivanr\OneDrive\Desktop\TriejaBackend\InventarioSaaS.Api\bin\Debug\net10.0\System.IdentityModel.Tokens.Jwt.dll
 C:\Users\ivanr\OneDrive\Desktop\TriejaBackend\InventarioSaaS.Api\bin\Debug\net10.0\cs\Microsoft.CodeAnalysis.resources.dll
 C:\Users\ivanr\OneDrive\Desktop\TriejaBackend\InventarioSaaS.Api\bin\Debug\net10.0\de\Microsoft.CodeAnalysis.resources.dll
 C:\Users\ivanr\OneDrive\Desktop\TriejaBackend\InventarioSaaS.Api\bin\Debug\net10.0\es\Microsoft.CodeAnalysis.resources.dll
@@ -105,6 +114,7 @@ C:\Users\ivanr\OneDrive\Desktop\TriejaBackend\InventarioSaaS.Api\obj\Debug\net10
 C:\Users\ivanr\OneDrive\Desktop\TriejaBackend\InventarioSaaS.Api\obj\Debug\net10.0\InventarioSaaS.Api.csproj.CoreCompileInputs.cache
 C:\Users\ivanr\OneDrive\Desktop\TriejaBackend\InventarioSaaS.Api\obj\Debug\net10.0\InventarioSaaS.Api.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\ivanr\OneDrive\Desktop\TriejaBackend\InventarioSaaS.Api\obj\Debug\net10.0\InventarioSaaS.Api.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\ivanr\OneDrive\Desktop\TriejaBackend\InventarioSaaS.Api\obj\Debug\net10.0\InventarioSaaS.Api.sourcelink.json
 C:\Users\ivanr\OneDrive\Desktop\TriejaBackend\InventarioSaaS.Api\obj\Debug\net10.0\rjimswa.dswa.cache.json
 C:\Users\ivanr\OneDrive\Desktop\TriejaBackend\InventarioSaaS.Api\obj\Debug\net10.0\rjsmrazor.dswa.cache.json
 C:\Users\ivanr\OneDrive\Desktop\TriejaBackend\InventarioSaaS.Api\obj\Debug\net10.0\rjsmcshtml.dswa.cache.json
@@ -120,4 +130,6 @@ C:\Users\ivanr\OneDrive\Desktop\TriejaBackend\InventarioSaaS.Api\obj\Debug\net10
 C:\Users\ivanr\OneDrive\Desktop\TriejaBackend\InventarioSaaS.Api\obj\Debug\net10.0\InventarioSaaS.Api.pdb
 C:\Users\ivanr\OneDrive\Desktop\TriejaBackend\InventarioSaaS.Api\obj\Debug\net10.0\InventarioSaaS.Api.genruntimeconfig.cache
 C:\Users\ivanr\OneDrive\Desktop\TriejaBackend\InventarioSaaS.Api\obj\Debug\net10.0\ref\InventarioSaaS.Api.dll
-C:\Users\ivanr\OneDrive\Desktop\TriejaBackend\InventarioSaaS.Api\obj\Debug\net10.0\InventarioSaaS.Api.sourcelink.json
+C:\Users\ivanr\OneDrive\Desktop\TriejaBackend\InventarioSaaS.Api\bin\Debug\net10.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\ivanr\OneDrive\Desktop\TriejaBackend\InventarioSaaS.Api\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\ivanr\OneDrive\Desktop\TriejaBackend\InventarioSaaS.Api\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerUI.dll
