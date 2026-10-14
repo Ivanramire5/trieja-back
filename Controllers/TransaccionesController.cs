@@ -26,6 +26,7 @@ namespace InventarioSaaS.Api.Controllers
             
             return int.Parse(tenantClaim.Value);
         }
+        
 
         public class RegistroVentaDto
         {
@@ -37,6 +38,7 @@ namespace InventarioSaaS.Api.Controllers
             // Nota: Podrías eliminar TenantId del DTO si quieres, ya no le haremos caso a lo que mande React.
             public int TenantId { get; set; } 
         }
+        
 
         [HttpPost]
         public async Task<IActionResult> RegistrarTransaccion(RegistroVentaDto venta)

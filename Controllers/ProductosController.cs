@@ -2,11 +2,13 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using InventarioSaaS.Api.Data;
 using InventarioSaaS.Api.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace InventarioSaaS.Api.Controllers
 {
     // Esto define la ruta base de este controlador. 
     // [controller] se reemplaza automáticamente por "Productos", por lo que la ruta será: /api/productos
+    [Authorize] // <--- Candado activado
     [Route("api/[controller]")]
     [ApiController]
     public class ProductosController : ControllerBase
@@ -18,15 +20,22 @@ namespace InventarioSaaS.Api.Controllers
         {
             _context = context;
         }
+        private int ObtenerTenantIdSeguro()
+    {
+        var tenantClaim = User.FindFirst("TenantId");
+        if (tenantClaim == null) throw new UnauthorizedAccessException("Token inválido");
+        return int.Parse(tenantClaim.Value);
+    }
 
         // GET: api/productos
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Producto>>> GetProductos()
-        {
-            // Aquí usamos Entity Framework para ir a PostgreSQL y traer todos los productos.
-            // (Más adelante, como es un SaaS, aquí filtraremos por el TenantId del cliente logueado)
-            var productos = await _context.Productos.ToListAsync();
-            
+        {int miTenantId = ObtenerTenantIdSeguro(); 
+
+    // 2. Agregamos un .Where() para filtrar la búsqueda en PostgreSQL
+        var productos = await _context.Productos
+            .Where(p => p.TenantId == miTenantId)
+            .ToListAsync();
             return Ok(productos);
         }
 
@@ -34,59 +43,66 @@ namespace InventarioSaaS.Api.Controllers
         [HttpPost]
         public async Task<ActionResult<Producto>> CrearProducto(Producto producto)
         {
-            // Agregamos el producto recibido desde React a la base de datos
+            // 1. SEGURIDAD: Sobrescribimos el TenantId con el ID real del usuario conectado.
+            // Así ignoramos por completo cualquier ID falso o erróneo que envíe React.
+            producto.TenantId = ObtenerTenantIdSeguro();
+
+            // 2. Agregamos el producto a la base de datos
             _context.Productos.Add(producto);
             await _context.SaveChangesAsync();
 
-            // Retornamos un estado 201 Created y el producto recién creado (con su nuevo ID)
+            // 3. Retornamos un estado 201 Created y el producto recién creado
             return CreatedAtAction(nameof(GetProductos), new { id = producto.Id }, producto);
         }
         
         [HttpPut("{id}")]
         public async Task<IActionResult> ActualizarProducto(int id, Producto producto)
         {
-            // Verificamos que el ID de la URL coincida con el ID del objeto enviado
-            if (id != producto.Id)
-            {
-                return BadRequest("El ID del producto no coincide.");
-            }
+            // 1. Verificamos que el ID de la URL coincida con el ID del objeto
+            if (id != producto.Id) return BadRequest("El ID del producto no coincide.");
 
-            // Le decimos a Entity Framework que este producto ha sido modificado
-            _context.Entry(producto).State = EntityState.Modified;
+            int miTenantId = ObtenerTenantIdSeguro();
+
+            // 2. Buscamos el producto original en la base de datos
+            var productoExistente = await _context.Productos.FindAsync(id);
+            if (productoExistente == null) return NotFound("El producto no existe.");
+
+            // 3. SEGURIDAD: Bloqueamos si el producto pertenece a otro negocio
+            if (productoExistente.TenantId != miTenantId) return Forbid();
+
+            // 4. Actualizamos solo los datos del producto (evitamos sobrescribir el TenantId)
+            productoExistente.Nombre = producto.Nombre;
+            productoExistente.Categoria = producto.Categoria;
+            productoExistente.StockActual = producto.StockActual;
+            productoExistente.PrecioVenta = producto.PrecioVenta;
+            productoExistente.Costo = producto.Costo;
+            productoExistente.StockMinimo = producto.StockMinimo;
 
             try
             {
-                // Guardamos los cambios en PostgreSQL
                 await _context.SaveChangesAsync();
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!_context.Productos.Any(e => e.Id == id))
-                {
-                    return NotFound("El producto no existe.");
-                }
-                else
-                {
-                    throw;
-                }
+                throw;
             }
 
-            return NoContent(); // Retorna 204 No Content (Éxito sin devolver datos)
+            return NoContent(); 
         }
 
-        // DELETE: api/productos/{id} (Para Eliminar Producto)
         [HttpDelete("{id}")]
         public async Task<IActionResult> EliminarProducto(int id)
         {
-            // Buscamos el producto en la base de datos
-            var producto = await _context.Productos.FindAsync(id);
-            
-            if (producto == null)
-            {
-                return NotFound("Producto no encontrado.");
-            }
+            int miTenantId = ObtenerTenantIdSeguro();
 
-            // Lo removemos del contexto y guardamos
+            // 1. Buscamos el producto
+            var producto = await _context.Productos.FindAsync(id);
+            if (producto == null) return NotFound("Producto no encontrado.");
+
+            // 2. SEGURIDAD: Verificamos que sea el dueño antes de borrarlo
+            if (producto.TenantId != miTenantId) return Forbid();
+
+            // 3. Lo removemos de la base de datos
             _context.Productos.Remove(producto);
             await _context.SaveChangesAsync();
 

@@ -11,6 +11,7 @@ public class ApplicationDbContext : DbContext
     public DbSet<Producto> Productos { get; set; } 
     public DbSet<Movimiento> Movimientos { get; set; } 
     public DbSet<TransaccionCaja> TransaccionesCaja { get; set; } 
+    public DbSet<Proveedor> Proveedores { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

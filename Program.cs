@@ -23,7 +23,8 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 );
 
 // 1. Configuramos la llave secreta (En producción, esto va en un archivo seguro .env)
-var key = Encoding.ASCII.GetBytes("EstaEsUnaClaveSuperSecretaYMuyLargaParaInventarioSaaS123!");
+var keyStr = builder.Configuration["Jwt:Key"] ?? throw new InvalidOperationException("Falta la clave JWT en appsettings");
+var key = Encoding.ASCII.GetBytes(keyStr);
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
@@ -33,7 +34,8 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             ValidateIssuerSigningKey = true,
             IssuerSigningKey = new SymmetricSecurityKey(key),
             ValidateIssuer = false,
-            ValidateAudience = false
+            ValidateAudience = false,
+            ValidateLifetime = true
         };
     });
 
