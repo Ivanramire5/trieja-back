@@ -133,3 +133,8 @@ C:\Users\ivanr\OneDrive\Desktop\TriejaBackend\InventarioSaaS.Api\obj\Debug\net10
 C:\Users\ivanr\OneDrive\Desktop\TriejaBackend\InventarioSaaS.Api\bin\Debug\net10.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\ivanr\OneDrive\Desktop\TriejaBackend\InventarioSaaS.Api\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\ivanr\OneDrive\Desktop\TriejaBackend\InventarioSaaS.Api\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\ivanr\OneDrive\Desktop\TriejaBackend\InventarioSaaS.Api\bin\Debug\net10.0\BouncyCastle.Cryptography.dll
+C:\Users\ivanr\OneDrive\Desktop\TriejaBackend\InventarioSaaS.Api\bin\Debug\net10.0\MailKit.dll
+C:\Users\ivanr\OneDrive\Desktop\TriejaBackend\InventarioSaaS.Api\bin\Debug\net10.0\MimeKit.dll
+C:\Users\ivanr\OneDrive\Desktop\TriejaBackend\InventarioSaaS.Api\bin\Debug\net10.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\ivanr\OneDrive\Desktop\TriejaBackend\InventarioSaaS.Api\bin\Debug\net10.0\runtimes\win\lib\net10.0\System.Security.Cryptography.Pkcs.dll

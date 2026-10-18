@@ -12,4 +12,7 @@ public class Producto
     public decimal PrecioVenta { get; set; }
     public int StockActual { get; set; }
     public int StockMinimo { get; set; }
+
+    public int? ProveedorId { get; set; } // El ID del proveedor asociado
+    public Proveedor? Proveedor { get; set; } // Propiedad de navegación
 }

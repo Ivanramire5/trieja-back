@@ -81,6 +81,9 @@ namespace InventarioSaaS.Api.Migrations
                     b.Property<decimal>("PrecioVenta")
                         .HasColumnType("numeric");
 
+                    b.Property<int?>("ProveedorId")
+                        .HasColumnType("integer");
+
                     b.Property<int>("StockActual")
                         .HasColumnType("integer");
 
@@ -91,6 +94,8 @@ namespace InventarioSaaS.Api.Migrations
                         .HasColumnType("integer");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("ProveedorId");
 
                     b.HasIndex("TenantId");
 
@@ -156,6 +161,15 @@ namespace InventarioSaaS.Api.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<string>("Password")
+                        .HasColumnType("text");
+
+                    b.Property<string>("ResetToken")
+                        .HasColumnType("text");
+
+                    b.Property<DateTime?>("ResetTokenExpires")
+                        .HasColumnType("timestamp with time zone");
+
                     b.HasKey("Id");
 
                     b.ToTable("Tenants");
@@ -214,11 +228,17 @@ namespace InventarioSaaS.Api.Migrations
 
             modelBuilder.Entity("InventarioSaaS.Api.Models.Producto", b =>
                 {
+                    b.HasOne("InventarioSaaS.Api.Models.Proveedor", "Proveedor")
+                        .WithMany()
+                        .HasForeignKey("ProveedorId");
+
                     b.HasOne("InventarioSaaS.Api.Models.Tenant", "Tenant")
                         .WithMany()
                         .HasForeignKey("TenantId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Proveedor");
 
                     b.Navigation("Tenant");
                 });
