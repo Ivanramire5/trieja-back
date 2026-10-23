@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("InventarioSaaS.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2629c38eeee38612710c24f7fd223cb1d09fdca7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4bbe4084ad9ebaf915588798c05340a7203bd0fb")]
 [assembly: System.Reflection.AssemblyProductAttribute("InventarioSaaS.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("InventarioSaaS.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

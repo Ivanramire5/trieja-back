@@ -1,2 +1,4 @@
 # Configuración local de desarrollo
 appsettings.Development.json
+appsettings.json
+appsettings.Development.json
