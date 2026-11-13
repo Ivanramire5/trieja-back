@@ -44,7 +44,6 @@ namespace InventarioSaaS.Api.Controllers
             };
 
             var keyStr = _configuration["Jwt:Key"] ?? throw new InvalidOperationException("Falta la clave JWT en appsettings");
-            // Cambia Encoding.ASCII por Encoding.UTF8
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(keyStr));
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
